@@ -4,3 +4,4 @@
 library google_maps_api.places;
 
 export 'src/places.dart';
+export 'src/model/location.dart';

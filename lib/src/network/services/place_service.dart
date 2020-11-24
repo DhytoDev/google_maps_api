@@ -9,11 +9,6 @@ abstract class PlaceService extends ChopperService {
 
   @Get(path: 'autocomplete/json')
   Future<Response> placeAutoComplete({
-    @Query('input') @required String input,
-    @Query('key') @required String apiKey,
-    @Query('location') String location,
-    @Query('origin') String origin,
-    @Query('radius') num radius,
-    @Query('language') String language,
+    @QueryMap() Map<String, dynamic> query,
   });
 }
