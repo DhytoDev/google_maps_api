@@ -20,7 +20,7 @@ class _$PlaceService extends PlaceService {
   Future<Response<dynamic>> placeAutoComplete(
       {String input,
       String apiKey,
-      Location location,
+      String location,
       String origin,
       num radius,
       String language}) {
@@ -28,7 +28,7 @@ class _$PlaceService extends PlaceService {
     final $params = <String, dynamic>{
       'input': input,
       'key': apiKey,
-      'location': location.toString(),
+      'location': location,
       'origin': origin,
       'radius': radius,
       'language': language

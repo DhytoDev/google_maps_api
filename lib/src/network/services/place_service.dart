@@ -1,5 +1,4 @@
 import 'package:chopper/chopper.dart';
-import 'package:google_maps_api/src/model/location.dart';
 import 'package:meta/meta.dart';
 
 part 'place_service.chopper.dart';
@@ -12,7 +11,7 @@ abstract class PlaceService extends ChopperService {
   Future<Response> placeAutoComplete({
     @Query('input') @required String input,
     @Query('key') @required String apiKey,
-    @Query('location') Location location,
+    @Query('location') String location,
     @Query('origin') String origin,
     @Query('radius') num radius,
     @Query('language') String language,
