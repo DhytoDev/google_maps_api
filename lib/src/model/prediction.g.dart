@@ -14,6 +14,14 @@ Prediction _$PredictionFromJson(Map<String, dynamic> json) {
     json['place_id'] as String,
     json['reference'] as String,
     (json['types'] as List)?.map((e) => e as String)?.toList(),
+    json['structured_formatting'] == null
+        ? null
+        : StructuredFormatting.fromJson(
+            json['structured_formatting'] as Map<String, dynamic>),
+    (json['terms'] as List)
+        ?.map(
+            (e) => e == null ? null : Term.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -32,5 +40,33 @@ Map<String, dynamic> _$PredictionToJson(Prediction instance) {
   writeNotNull('place_id', instance.placeId);
   writeNotNull('reference', instance.reference);
   writeNotNull('types', instance.types);
+  writeNotNull('structured_formatting', instance.structuredFormatting);
+  writeNotNull('terms', instance.terms);
   return val;
 }
+
+StructuredFormatting _$StructuredFormattingFromJson(Map<String, dynamic> json) {
+  return StructuredFormatting(
+    json['main_text'] as String,
+    json['secondary_text'] as String,
+  );
+}
+
+Map<String, dynamic> _$StructuredFormattingToJson(
+        StructuredFormatting instance) =>
+    <String, dynamic>{
+      'main_text': instance.mainText,
+      'secondary_text': instance.secondaryText,
+    };
+
+Term _$TermFromJson(Map<String, dynamic> json) {
+  return Term(
+    json['offset'] as int,
+    json['value'] as String,
+  );
+}
+
+Map<String, dynamic> _$TermToJson(Term instance) => <String, dynamic>{
+      'offset': instance.offset,
+      'value': instance.value,
+    };

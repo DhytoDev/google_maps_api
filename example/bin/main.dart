@@ -6,13 +6,14 @@ void main() async {
 
   final places = await Places.findNearbyPlaces(
     input: 'Helper',
-    apiKey: 'YOUR API KEY',
+    apiKey: 'YOUR API KEY HERE',
     radius: 50,
     location: Location(-5.1921861, 119.4807209),
   );
 
   print(places.status);
-  print(places.predictions.map((e) => e.toJson()).toList());
+  print(places.predictions.map((e) => e.toJson().toString()).toList());
+  print(places.predictions.first.terms.map((e) => e.toJson()).toList());
 }
 
 void _setupLogging() {
