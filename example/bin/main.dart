@@ -6,7 +6,7 @@ void main() async {
 
   final places = await Places.findNearbyPlaces(
     input: 'Helper',
-    apiKey: 'AIzaSyDmHjXhdz0DtdRm-WPVfFYP91KQcqovqyA',
+    apiKey: 'YOUR API KEY',
     radius: 50,
     location: Location(-5.1921861, 119.4807209),
   );
