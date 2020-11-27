@@ -4,16 +4,13 @@ import 'package:logging/logging.dart';
 void main() async {
   _setupLogging();
 
-  final places = await Places.findNearbyPlaces(
-    input: 'Helper',
+  final place = await Places.getPlaceDetails(
+    placeId: 'ChIJOfNm3rjjvi0R5ZQlRAtIWLg',
     apiKey: 'YOUR API KEY HERE',
-    radius: 50,
-    location: Location(-5.1921861, 119.4807209),
+    language: 'id',
   );
 
-  print(places.status);
-  print(places.predictions.map((e) => e.toJson().toString()).toList());
-  print(places.predictions.first.terms.map((e) => e.toJson()).toList());
+  print(place.result.toJson());
 }
 
 void _setupLogging() {

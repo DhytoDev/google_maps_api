@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'location.g.dart';
+part 'geometry.g.dart';
 
 @JsonSerializable()
 class Location {
@@ -18,4 +18,15 @@ class Location {
 
   @override
   String toString() => '$latitude,$longitude';
+}
+
+@JsonSerializable()
+class Geometry {
+  final Location location;
+
+  Geometry(this.location);
+
+  factory Geometry.fromJson(Map<String, dynamic> json) =>
+      _$GeometryFromJson(json);
+  Map<String, dynamic> toJson() => _$GeometryToJson(this);
 }

@@ -17,8 +17,16 @@ class _$PlaceService extends PlaceService {
   final definitionType = PlaceService;
 
   @override
-  Future<Response<dynamic>> placeAutoComplete({Map<String, dynamic> query}) {
+  Future<Response<dynamic>> placeAutoComplete(Map<String, dynamic> query) {
     final $url = '/place/autocomplete/json';
+    final $params = query;
+    final $request = Request('GET', $url, client.baseUrl, parameters: $params);
+    return client.send<dynamic, dynamic>($request);
+  }
+
+  @override
+  Future<Response<dynamic>> getPlaceDetails(Map<String, dynamic> query) {
+    final $url = '/place/details/json';
     final $params = query;
     final $request = Request('GET', $url, client.baseUrl, parameters: $params);
     return client.send<dynamic, dynamic>($request);

@@ -1,4 +1,4 @@
-class ResponseStatus {
+abstract class ResponseStatus {
   static const okay = 'OK';
   static const zeroResults = 'ZERO_RESULTS';
   static const overQueryLimit = 'OVER_QUERY_LIMIT';

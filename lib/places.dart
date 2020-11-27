@@ -3,5 +3,6 @@
 /// More dartdocs go here.
 library google_maps_api.places;
 
-export 'src/places.dart';
-export 'src/model/location.dart';
+export 'src/domain/places.dart';
+export 'src/domain/google_maps_api.dart';
+export 'src/model/geometry.dart';
