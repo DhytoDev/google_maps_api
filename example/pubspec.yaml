@@ -8,6 +8,6 @@ environment:
 dependencies:
   google_maps_api:
     path: ../
-  logging: ^0.11.4
+  logging: ^1.0.1
 dev_dependencies:
-  pedantic: ^1.9.0
+  pedantic: ^1.11.0
