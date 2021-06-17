@@ -4,15 +4,15 @@ part 'query_params.g.dart';
 
 @JsonSerializable(createFactory: false, includeIfNull: false)
 class QueryParams {
-  final String input;
+  final String? input;
   @JsonKey(name: 'key')
-  final String apiKey;
-  final String location;
-  final String origin;
-  final num radius;
-  final String languange;
+  final String? apiKey;
+  final String? location;
+  final String? origin;
+  final num? radius;
+  final String? languange;
   @JsonKey(name: 'place_id')
-  final String placeId;
+  final String? placeId;
 
   QueryParams({
     this.input,

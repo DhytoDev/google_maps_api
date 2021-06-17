@@ -8,11 +8,9 @@ part of 'places_detail_result.dart';
 
 PlaceDetailResult _$PlaceDetailResultFromJson(Map<String, dynamic> json) {
   return PlaceDetailResult(
-    json['status'] as String,
-    json['errorMessage'] as String,
-    json['result'] == null
-        ? null
-        : Result.fromJson(json['result'] as Map<String, dynamic>),
+    json['status'] as String?,
+    json['errorMessage'] as String?,
+    Result.fromJson(json['result'] as Map<String, dynamic>),
   );
 }
 
@@ -28,15 +26,13 @@ Result _$ResultFromJson(Map<String, dynamic> json) {
     json['geometry'] == null
         ? null
         : Geometry.fromJson(json['geometry'] as Map<String, dynamic>),
-    json['business_status'] as String,
-    json['formatted_address'] as String,
-    json['name'] as String,
-    json['international_phone_number'] as String,
-  )..addressComponents = (json['address_components'] as List)
-      ?.map((e) => e == null
-          ? null
-          : AddressComponent.fromJson(e as Map<String, dynamic>))
-      ?.toList();
+    json['business_status'] as String?,
+    json['formatted_address'] as String?,
+    json['name'] as String?,
+    json['international_phone_number'] as String?,
+  )..addressComponents = (json['address_components'] as List<dynamic>?)
+      ?.map((e) => AddressComponent.fromJson(e as Map<String, dynamic>))
+      .toList();
 }
 
 Map<String, dynamic> _$ResultToJson(Result instance) => <String, dynamic>{

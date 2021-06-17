@@ -11,10 +11,9 @@ PlacesAutocompleteResult _$PlacesAutocompleteResultFromJson(
   return PlacesAutocompleteResult(
     json['status'] as String,
     json['errorMessage'] as String,
-    (json['predictions'] as List)
-        ?.map((e) =>
-            e == null ? null : Prediction.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    (json['predictions'] as List<dynamic>)
+        .map((e) => Prediction.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 

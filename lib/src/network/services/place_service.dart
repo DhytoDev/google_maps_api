@@ -4,7 +4,7 @@ part 'place_service.chopper.dart';
 
 @ChopperApi(baseUrl: '/place')
 abstract class PlaceService extends ChopperService {
-  static PlaceService create([ChopperClient client]) => _$PlaceService(client);
+  static PlaceService create([ChopperClient? client]) => _$PlaceService(client);
 
   @Get(path: 'autocomplete/json')
   Future<Response> placeAutoComplete(

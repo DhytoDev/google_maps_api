@@ -8,20 +8,19 @@ part of 'prediction.dart';
 
 Prediction _$PredictionFromJson(Map<String, dynamic> json) {
   return Prediction(
-    json['description'] as String,
-    json['id'] as String,
-    json['distance_meters'] as int,
-    json['place_id'] as String,
-    json['reference'] as String,
-    (json['types'] as List)?.map((e) => e as String)?.toList(),
+    json['description'] as String?,
+    json['id'] as String?,
+    json['distance_meters'] as int?,
+    json['place_id'] as String?,
+    json['reference'] as String?,
+    (json['types'] as List<dynamic>?)?.map((e) => e as String).toList(),
     json['structured_formatting'] == null
         ? null
         : StructuredFormatting.fromJson(
             json['structured_formatting'] as Map<String, dynamic>),
-    (json['terms'] as List)
-        ?.map(
-            (e) => e == null ? null : Term.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    (json['terms'] as List<dynamic>?)
+        ?.map((e) => Term.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 

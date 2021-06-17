@@ -10,10 +10,10 @@ class PlaceDetailResult extends ResponseStatus {
   final Result result;
 
   PlaceDetailResult(
-    String status,
-    String errorMessage,
+    String? status,
+    String? errorMessage,
     this.result,
-  ) : super(status, errorMessage);
+  ) : super(status!, errorMessage!);
 
   factory PlaceDetailResult.fromJson(Map<String, dynamic> json) =>
       _$PlaceDetailResultFromJson(json);
@@ -24,15 +24,15 @@ class PlaceDetailResult extends ResponseStatus {
 @JsonSerializable()
 class Result {
   @JsonKey(name: 'address_components')
-  List<AddressComponent> addressComponents;
-  final Geometry geometry;
+  List<AddressComponent>? addressComponents;
+  final Geometry? geometry;
   @JsonKey(name: 'business_status')
-  final String businessStatus;
+  final String? businessStatus;
   @JsonKey(name: 'formatted_address')
-  final String formattedAddress;
-  final String name;
+  final String? formattedAddress;
+  final String? name;
   @JsonKey(name: 'international_phone_number')
-  final String phoneNumber;
+  final String? phoneNumber;
 
   Result(
     this.geometry,

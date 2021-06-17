@@ -5,10 +5,10 @@ part 'address_component.g.dart';
 @JsonSerializable()
 class AddressComponent {
   @JsonKey(name: 'long_name')
-  final String longName;
+  final String? longName;
   @JsonKey(name: 'short_name')
-  final String shortName;
-  final List<String> types;
+  final String? shortName;
+  final List<String>? types;
 
   AddressComponent(this.longName, this.shortName, this.types);
 

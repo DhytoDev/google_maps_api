@@ -8,8 +8,8 @@ part of 'geometry.dart';
 
 Location _$LocationFromJson(Map<String, dynamic> json) {
   return Location(
-    (json['lat'] as num)?.toDouble(),
-    (json['lng'] as num)?.toDouble(),
+    (json['lat'] as num?)?.toDouble(),
+    (json['lng'] as num?)?.toDouble(),
   );
 }
 
@@ -20,9 +20,7 @@ Map<String, dynamic> _$LocationToJson(Location instance) => <String, dynamic>{
 
 Geometry _$GeometryFromJson(Map<String, dynamic> json) {
   return Geometry(
-    json['location'] == null
-        ? null
-        : Location.fromJson(json['location'] as Map<String, dynamic>),
+    Location.fromJson(json['location'] as Map<String, dynamic>),
   );
 }
 

@@ -5,9 +5,9 @@ part 'geometry.g.dart';
 @JsonSerializable()
 class Location {
   @JsonKey(name: 'lat')
-  final double latitude;
+  final double? latitude;
   @JsonKey(name: 'lng')
-  final double longitude;
+  final double? longitude;
 
   Location(this.latitude, this.longitude);
 
