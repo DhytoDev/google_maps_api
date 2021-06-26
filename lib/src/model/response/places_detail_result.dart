@@ -13,7 +13,7 @@ class PlaceDetailResult extends ResponseStatus {
     String? status,
     String? errorMessage,
     this.result,
-  ) : super(status!, errorMessage!);
+  ) : super(status, errorMessage);
 
   factory PlaceDetailResult.fromJson(Map<String, dynamic> json) =>
       _$PlaceDetailResultFromJson(json);
