@@ -5,15 +5,22 @@ part 'prediction.g.dart';
 @JsonSerializable(includeIfNull: false)
 class Prediction {
   final String? description;
+
   final String? id;
+
   @JsonKey(name: 'distance_meters')
   final int? distanceMeters;
+
   @JsonKey(name: 'place_id')
   final String? placeId;
+
   final String? reference;
+
   final List<String>? types;
+
   @JsonKey(name: 'structured_formatting')
   final StructuredFormatting? structuredFormatting;
+
   final List<Term>? terms;
 
   Prediction(
@@ -36,9 +43,9 @@ class Prediction {
 @JsonSerializable()
 class StructuredFormatting {
   @JsonKey(name: 'main_text')
-  final String mainText;
+  final String? mainText;
   @JsonKey(name: 'secondary_text')
-  final String secondaryText;
+  final String? secondaryText;
 
   StructuredFormatting(this.mainText, this.secondaryText);
 
@@ -50,8 +57,8 @@ class StructuredFormatting {
 
 @JsonSerializable()
 class Term {
-  final int offset;
-  final String value;
+  final int? offset;
+  final String? value;
 
   Term(this.offset, this.value);
 

@@ -12,7 +12,7 @@ abstract class ResponseStatus {
   final String status;
 
   /// JSON error_message
-  final String errorMessage;
+  final String? errorMessage;
 
   bool get isOkay => status == okay;
   bool get hasNoResults => status == zeroResults;

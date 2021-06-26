@@ -22,7 +22,7 @@ class Location {
 
 @JsonSerializable()
 class Geometry {
-  final Location location;
+  final Location? location;
 
   Geometry(this.location);
 

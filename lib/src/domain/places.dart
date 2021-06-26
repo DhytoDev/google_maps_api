@@ -22,7 +22,7 @@ class Places extends GoogleMapsApi {
         radius: radius,
         location: location?.toString(),
         origin: origin?.toString(),
-        languange: language,
+        language: language,
       ).toJson(),
     );
 
@@ -42,7 +42,7 @@ class Places extends GoogleMapsApi {
       QueryParams(
         placeId: placeId,
         apiKey: apiKey,
-        languange: language,
+        language: language,
       ).toJson(),
     );
 

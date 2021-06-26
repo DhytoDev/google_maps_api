@@ -46,8 +46,8 @@ Map<String, dynamic> _$PredictionToJson(Prediction instance) {
 
 StructuredFormatting _$StructuredFormattingFromJson(Map<String, dynamic> json) {
   return StructuredFormatting(
-    json['main_text'] as String,
-    json['secondary_text'] as String,
+    json['main_text'] as String?,
+    json['secondary_text'] as String?,
   );
 }
 
@@ -60,8 +60,8 @@ Map<String, dynamic> _$StructuredFormattingToJson(
 
 Term _$TermFromJson(Map<String, dynamic> json) {
   return Term(
-    json['offset'] as int,
-    json['value'] as String,
+    json['offset'] as int?,
+    json['value'] as String?,
   );
 }
 

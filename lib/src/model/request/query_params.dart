@@ -10,7 +10,7 @@ class QueryParams {
   final String? location;
   final String? origin;
   final num? radius;
-  final String? languange;
+  final String? language;
   @JsonKey(name: 'place_id')
   final String? placeId;
 
@@ -20,7 +20,7 @@ class QueryParams {
     this.location,
     this.origin,
     this.radius,
-    this.languange,
+    this.language,
     this.placeId,
   });
 
