@@ -6,11 +6,11 @@ part 'places_autocomplete_result.g.dart';
 
 @JsonSerializable()
 class PlacesAutocompleteResult extends ResponseStatus {
-  final List<Prediction> predictions;
+  final List<Prediction>? predictions;
 
   PlacesAutocompleteResult(
-    String status,
-    String errorMessage,
+    String? status,
+    String? errorMessage,
     this.predictions,
   ) : super(status, errorMessage);
 

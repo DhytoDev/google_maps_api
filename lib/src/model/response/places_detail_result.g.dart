@@ -9,15 +9,17 @@ part of 'places_detail_result.dart';
 PlaceDetailResult _$PlaceDetailResultFromJson(Map<String, dynamic> json) {
   return PlaceDetailResult(
     json['status'] as String?,
-    json['errorMessage'] as String?,
-    Result.fromJson(json['result'] as Map<String, dynamic>),
+    json['error_message'] as String?,
+    json['result'] == null
+        ? null
+        : Result.fromJson(json['result'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$PlaceDetailResultToJson(PlaceDetailResult instance) =>
     <String, dynamic>{
       'status': instance.status,
-      'errorMessage': instance.errorMessage,
+      'error_message': instance.errorMessage,
       'result': instance.result,
     };
 

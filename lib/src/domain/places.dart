@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:google_maps_api/src/model/response/places_detail_result.dart';
 import 'package:meta/meta.dart';
 
 import '../model/model.dart';
+import '../model/response/places_detail_result.dart';
 import 'google_maps_api.dart';
 
 class Places extends GoogleMapsApi {
@@ -27,7 +27,11 @@ class Places extends GoogleMapsApi {
     );
 
     if (response.isSuccessful) {
-      return PlacesAutocompleteResult.fromJson(response.body);
+      final result = PlacesAutocompleteResult.fromJson(response.body);
+
+      if (result.isOkay) return result;
+
+      throw HttpException(result.errorMessage.toString());
     }
 
     throw HttpException(response.error.toString());
@@ -46,7 +50,13 @@ class Places extends GoogleMapsApi {
       ).toJson(),
     );
 
-    if (response.isSuccessful) return PlaceDetailResult.fromJson(response.body);
+    if (response.isSuccessful) {
+      final result = PlaceDetailResult.fromJson(response.body);
+
+      if (result.isOkay) return result;
+
+      throw HttpException(result.errorMessage!);
+    }
 
     throw HttpException(response.error.toString());
   }

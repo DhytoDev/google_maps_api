@@ -7,7 +7,7 @@ part 'places_detail_result.g.dart';
 
 @JsonSerializable()
 class PlaceDetailResult extends ResponseStatus {
-  final Result result;
+  final Result? result;
 
   PlaceDetailResult(
     String? status,

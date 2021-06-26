@@ -1,3 +1,5 @@
+import 'package:json_annotation/json_annotation.dart';
+
 abstract class ResponseStatus {
   static const okay = 'OK';
   static const zeroResults = 'ZERO_RESULTS';
@@ -12,6 +14,7 @@ abstract class ResponseStatus {
   final String? status;
 
   /// JSON error_message
+  @JsonKey(name: 'error_message')
   final String? errorMessage;
 
   bool get isOkay => status == okay;
