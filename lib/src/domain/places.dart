@@ -1,17 +1,14 @@
 import 'dart:io';
 
-import 'package:meta/meta.dart';
-
 import '../model/model.dart';
-import '../model/response/places_detail_result.dart';
 import 'google_maps_api.dart';
 
 class Places extends GoogleMapsApi {
   static Future<PlacesAutocompleteResult> findNearbyPlaces({
-    @required String? input,
-    @required String? apiKey,
-    @required num? radius,
-    @required Location? location,
+    required String? input,
+    required String? apiKey,
+    required num? radius,
+    required Location? location,
     Location? origin,
     String? language,
   }) async {
@@ -37,9 +34,9 @@ class Places extends GoogleMapsApi {
     throw HttpException(response.error.toString());
   }
 
-  static Future<PlaceDetailResult> getPlaceDetails({
-    @required String? placeId,
-    @required String? apiKey,
+  static Future<PlaceDetailsResult> getPlaceDetails({
+    required String? placeId,
+    required String? apiKey,
     String? language,
   }) async {
     final response = await GoogleMapsApi.placeService.getPlaceDetails(
@@ -51,7 +48,7 @@ class Places extends GoogleMapsApi {
     );
 
     if (response.isSuccessful) {
-      final result = PlaceDetailResult.fromJson(response.body);
+      final result = PlaceDetailsResult.fromJson(response.body);
 
       if (result.isOkay) return result;
 
