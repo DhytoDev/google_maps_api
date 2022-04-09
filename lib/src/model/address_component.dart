@@ -1,14 +1,15 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'address_component.g.dart';
 
 @JsonSerializable()
-class AddressComponent {
+class AddressComponent extends Equatable {
   @JsonKey(name: 'long_name')
-  final String? longName;
+  final String longName;
   @JsonKey(name: 'short_name')
-  final String? shortName;
-  final List<String>? types;
+  final String shortName;
+  final List<String> types;
 
   AddressComponent(this.longName, this.shortName, this.types);
 
@@ -16,4 +17,7 @@ class AddressComponent {
       _$AddressComponentFromJson(json);
 
   Map<String, dynamic> toJson() => _$AddressComponentToJson(this);
+
+  @override
+  List<Object?> get props => [longName, shortName, types];
 }
