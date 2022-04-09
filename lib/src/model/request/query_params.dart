@@ -13,6 +13,7 @@ class QueryParams {
   final String? language;
   @JsonKey(name: 'place_id')
   final String? placeId;
+  final String? latlng;
 
   QueryParams({
     this.input,
@@ -22,6 +23,7 @@ class QueryParams {
     this.radius,
     this.language,
     this.placeId,
+    this.latlng,
   });
 
   Map<String, dynamic> toJson() => _$QueryParamsToJson(this);
