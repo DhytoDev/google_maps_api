@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-abstract class ResponseStatus {
+abstract class ResponseStatus extends Equatable {
   static const okay = 'OK';
   static const zeroResults = 'ZERO_RESULTS';
   static const overQueryLimit = 'OVER_QUERY_LIMIT';
@@ -32,4 +33,7 @@ abstract class ResponseStatus {
   bool get isNotFound => status == notFound;
 
   ResponseStatus(this.status, this.errorMessage);
+
+  @override
+  bool? get stringify => true;
 }
