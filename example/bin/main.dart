@@ -1,4 +1,4 @@
-import 'package:google_maps_api/places.dart';
+import 'package:google_maps_api/google_maps_api.dart';
 import 'package:logging/logging.dart';
 
 void main() async {
