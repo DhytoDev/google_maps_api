@@ -18,4 +18,7 @@ class PlacesAutocompleteResult extends ResponseStatus {
       _$PlacesAutocompleteResultFromJson(json);
 
   Map<String, dynamic> toJson() => _$PlacesAutocompleteResultToJson(this);
+
+  @override
+  List<Object?> get props => [predictions];
 }
