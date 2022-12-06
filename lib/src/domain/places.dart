@@ -5,21 +5,25 @@ import 'google_maps_api.dart';
 
 class Places extends GoogleMapsApi {
   static Future<PlacesAutocompleteResult> findNearbyPlaces({
-    required String? input,
-    required String? apiKey,
-    required num? radius,
-    required Location? location,
+    required String input,
+    required String apiKey,
+    required num radius,
+    required Location location,
     Location? origin,
     String? language,
+    bool strictBounds = false,
+    // [components]: country:{country_code} ex: `country:id`
+    String components = 'country:id',
   }) async {
     final response = await GoogleMapsApi.placeService.placeAutoComplete(
       QueryParams(
         input: input,
         apiKey: apiKey,
         radius: radius,
-        location: location?.toString(),
+        location: location.toString(),
         origin: origin?.toString(),
         language: language,
+        strictBounds: strictBounds,
       ).toJson(),
     );
 

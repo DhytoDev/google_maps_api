@@ -23,5 +23,7 @@ Map<String, dynamic> _$QueryParamsToJson(QueryParams instance) {
   writeNotNull('language', instance.language);
   writeNotNull('place_id', instance.placeId);
   writeNotNull('latlng', instance.latlng);
+  writeNotNull('strictbounds', instance.strictBounds);
+  writeNotNull('components', instance.components);
   return val;
 }
