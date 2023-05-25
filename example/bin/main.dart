@@ -10,7 +10,7 @@ void main() async {
     language: 'id',
   );
 
-  print(place.result.toJson());
+  // print(place.result.toJson());
 }
 
 void _setupLogging() {

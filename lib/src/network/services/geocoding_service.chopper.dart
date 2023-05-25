@@ -19,9 +19,14 @@ class _$GeocodingService extends GeocodingService {
   @override
   Future<Response<dynamic>> findAddressFromCoordinate(
       Map<String, dynamic> query) {
-    final $url = '/geocode/json';
-    final $params = query;
-    final $request = Request('GET', $url, client.baseUrl, parameters: $params);
+    final Uri $url = Uri.parse('/geocode/json');
+    final Map<String, dynamic> $params = query;
+    final Request $request = Request(
+      'GET',
+      $url,
+      client.baseUrl,
+      parameters: $params,
+    );
     return client.send<dynamic, dynamic>($request);
   }
 }
